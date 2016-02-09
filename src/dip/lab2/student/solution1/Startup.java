@@ -38,7 +38,7 @@ public class Startup {
         TipCalculator[] tip = {tip1, tip2, tip3, tip4};
 
         for (TipCalculator t : tip) {
-            System.out.println("Your tip should be " + nf.format(tS.calculateTip(t)));
+            System.out.println("Your tip should be tipping " + nf.format(tS.calculateTip(t)));
         }
 
     }
