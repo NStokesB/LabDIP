@@ -9,14 +9,13 @@ package dip.lab2.student.solution1;
  * @author your name goes here
  */
 public class BaggageServiceTipCalculator implements TipCalculator{
-    private double MIN_BILL = 0.00;
-    private double MAX_BILL = 100.00;
-    private String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
-            + MAX_BILL;
-    private double GOOD_RATE = 0.20;
-    private double FAIR_RATE = 0.15;
-    private double POOR_RATE = 0.10;
+    private double maxBill = 100.00;
+    private double minBill = 0.00;
+    private String billEntryErr =
+            "Error: bill must be greater than or equal to " + minBill;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
     private double baseTipPerBag;
     private int bagCount;
@@ -42,13 +41,13 @@ public class BaggageServiceTipCalculator implements TipCalculator{
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
@@ -90,28 +89,30 @@ public class BaggageServiceTipCalculator implements TipCalculator{
         this.baseTipPerBag = baseTipPerBag;
     }
 
-    public double getMIN_BILL() {
-        return MIN_BILL;
+    public double getMaxBill() {
+        return maxBill;
     }
 
-    public double getMAX_BILL() {
-        return MAX_BILL;
+    public double getMinBill() {
+        return minBill;
     }
 
-    public String getBILL_ENTRY_ERR() {
-        return BILL_ENTRY_ERR;
+    public String getBillEntryErr() {
+        return billEntryErr;
     }
 
-    public double getGOOD_RATE() {
-        return GOOD_RATE;
+    public double getGoodRate() {
+        return goodRate;
     }
 
-    public double getFAIR_RATE() {
-        return FAIR_RATE;
+    public double getFairRate() {
+        return fairRate;
     }
 
-    public double getPOOR_RATE() {
-        return POOR_RATE;
+    public double getPoorRate() {
+        return poorRate;
     }
+
+  
     
 }

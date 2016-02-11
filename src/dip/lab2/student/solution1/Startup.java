@@ -22,24 +22,15 @@ public class Startup {
    
  
     public static void main(String[] args) {
-        String var = "GOOD";
-        String var2 = "FAIR";
-        String var3 = "POOR";
+        
 
-        TipCalculator tip1 = new FoodServiceTipCalculator(TipCalculator.ServiceQuality.valueOf(var), 100.00);
-        TipCalculator tip2 = new FoodServiceTipCalculator(TipCalculator.ServiceQuality.valueOf(var2), 150.00);
-        TipCalculator tip3 = new BaggageServiceTipCalculator(TipCalculator.ServiceQuality.valueOf(var3), 3);
-        TipCalculator tip4 = new BaggageServiceTipCalculator(TipCalculator.ServiceQuality.valueOf(var), 4);
+        TipCalculator tip = new FoodServiceTipCalculator(ServiceQuality.GOOD,100);
 
-        TipService tS = new TipService();
+        TipService tS = new TipService(tip);
 
-        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        double amt = tip.getTip();
 
-        TipCalculator[] tip = {tip1, tip2, tip3, tip4};
-
-        for (TipCalculator t : tip) {
-            System.out.println("Your tip should be tipping " + nf.format(tS.calculateTip(t)));
-        }
+        System.out.println(amt);
 
     }
 

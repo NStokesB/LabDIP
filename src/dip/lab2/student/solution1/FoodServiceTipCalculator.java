@@ -9,14 +9,15 @@ package dip.lab2.student.solution1;
  * @author your name goes here
  */
 public class FoodServiceTipCalculator implements TipCalculator{
-    private double MIN_BILL = 0.00;
-    private String BILL_ENTRY_ERR =
-            "Error: bill must be greater than or equal to " + MIN_BILL;
-    private double GOOD_RATE = 0.20;
-    private double FAIR_RATE = 0.15;
-    private double POOR_RATE = 0.10;
+    private double minBill = 0.00;
+    private String billEntryErr =
+            "Error: bill must be greater than or equal to " + minBill;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
     private double bill; 
+    
     private ServiceQuality serviceQuality; 
     
     @Override
@@ -36,13 +37,13 @@ public class FoodServiceTipCalculator implements TipCalculator{
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * GOOD_RATE;
+                tip = bill * goodRate;
                 break;
             case FAIR:
-                tip = bill * FAIR_RATE;
+                tip = bill * fairRate;
                 break;
             case POOR:
-                tip = bill * POOR_RATE;
+                tip = bill * poorRate;
                 break;
         }
 
@@ -50,8 +51,8 @@ public class FoodServiceTipCalculator implements TipCalculator{
     }
 
     public final void setBill(double billAmt) {
-        if(billAmt < MIN_BILL) {
-            throw new IllegalArgumentException(BILL_ENTRY_ERR);
+        if(billAmt < minBill) {
+            throw new IllegalArgumentException(billEntryErr);
         }
         bill = billAmt;
     }
@@ -61,30 +62,31 @@ public class FoodServiceTipCalculator implements TipCalculator{
         return serviceQuality;
     }
 
-    public double getMIN_BILL() {
-        return MIN_BILL;
+    public double getMinBill() {
+        return minBill;
     }
 
-    public String getBILL_ENTRY_ERR() {
-        return BILL_ENTRY_ERR;
+    public String getBillEntryErr() {
+        return billEntryErr;
     }
 
-    public double getGOOD_RATE() {
-        return GOOD_RATE;
+    public double getGoodRate() {
+        return goodRate;
     }
 
-    public double getFAIR_RATE() {
-        return FAIR_RATE;
+    public double getFairRate() {
+        return fairRate;
     }
 
-    public double getPOOR_RATE() {
-        return POOR_RATE;
+    public double getPoorRate() {
+        return poorRate;
     }
 
     public double getBill() {
         return bill;
     }
 
+   
    
     
 }
