@@ -3,19 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dip.lab3.student.solution1;
-import java.util.Scanner;
+
+
+
 /**
  *
- * @author nstokesbeamon
+ * @author l115student
  */
-public class KeyBoardMessageReader implements  MessageReader{
+public class GreetingMessageReader implements MessageReader{
+    
+    private static final String message = "Welcome, Come and join me!!";
     @Override
     public String readln() {
-        System.out.println("Please enter your name then a greeting, then press return:");
-
-        Scanner input = new Scanner(System.in);
-        return input.nextLine();
+        
+        return message;
     }
+    
 }

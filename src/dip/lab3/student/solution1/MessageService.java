@@ -19,7 +19,7 @@ public class MessageService {
         this.writer = writer;
     }
 
-    public final void sendMsg() {
+    public final void sendMessage() {
         String line = reader.readln();
         writer.writeln(line);
     }
