@@ -21,7 +21,11 @@ public class SalariedEmployee implements Employee {
         setAnnualSalary(annualSalary);
         setAnnualBonus(annualBonus);
     }
-
+ @Override
+    public double getAnnualWages() {
+        return annualBonus*annualSalary;
+        
+    }
     public double getAnnualSalary() {
         return annualSalary;
     }
@@ -38,11 +42,7 @@ public class SalariedEmployee implements Employee {
         this.annualBonus = annualBonus;
     }
 
-    @Override
-    public double getAnnualWages() {
-        return 0;
-        
-    }
+   
 
     
 }

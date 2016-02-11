@@ -22,7 +22,11 @@ public class HourlyEmployee implements Employee {
         setHourlyRate(hourlyRate);
         setTotalHrsForYear(totalHrsForYear);
     }
-
+  @Override
+    public double getAnnualWages() {
+        return totalHrsForYear*hourlyRate;
+        
+    } 
     public double getHourlyRate() {
         return hourlyRate;
     }
@@ -39,17 +43,6 @@ public class HourlyEmployee implements Employee {
         this.totalHrsForYear = totalHrsForYear;
     }
 
-    @Override
-    public double getAnnualWages() {
-        return 0;
-        
-    }
-
-    @Override
-    public double getAnnualSalary() {
-        return 0;
-        
-    }
-    
+   
 
 }

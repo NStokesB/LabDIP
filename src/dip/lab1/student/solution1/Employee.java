@@ -22,9 +22,4 @@ public interface Employee {
      */
     public abstract double getAnnualWages();
 
-    public double getAnnualSalary();
-
-
- 
-
 }

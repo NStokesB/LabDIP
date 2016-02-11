@@ -25,10 +25,12 @@ public class Startup {
         
 
         TipCalculator tip = new FoodServiceTipCalculator(ServiceQuality.GOOD,100);
-
+             
+        
         TipService tS = new TipService(tip);
 
         double amt = tip.getTip();
+        
 
         System.out.println(amt);
 
