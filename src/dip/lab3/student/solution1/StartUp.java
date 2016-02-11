@@ -12,5 +12,10 @@ package dip.lab3.student.solution1;
 public class StartUp {
     public static void main(String[] args) {
         
+         MessageWriter msgWriter1 = new GuiJOptionMessageWriter();
+
+         MessageReader msgReader1 = new KeyBoardMessageReader();
+         MessageService msg = new MessageService(msgReader1, msgWriter1);
+        
     }
 }
